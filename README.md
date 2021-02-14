@@ -1,7 +1,6 @@
 # Python Best Practices Cookiecutter
 
 Best practices [cookiecutter](https://github.com/audreyr/cookiecutter) template as described in this [blogpost](https://sourcery.ai/blog/python-best-practices/).
-
 ## Features
 - Testing with [pytest](https://docs.pytest.org/en/latest/)
 - Formatting with [black](https://github.com/psf/black)
@@ -11,7 +10,8 @@ Best practices [cookiecutter](https://github.com/audreyr/cookiecutter) template 
 - Git hooks that run all the above with [pre-commit](https://pre-commit.com/)
 - Deployment ready with [Docker](https://docker.com/)
 - Continuous Integration with [GitHub Actions](https://github.com/features/actions)
-
+** On this fork **
+- add setup.py
 ## Quickstart
 ```sh
 # Install pipx if pipenv and cookiecutter are not installed
@@ -22,7 +22,7 @@ python3 -m pipx ensurepath
 pipx install pipenv
 
 # Use cookiecutter to create project from this template
-pipx run cookiecutter gh:sourcery-ai/python-best-practices-cookiecutter
+pipx run cookiecutter gh:nielsrolf/python-best-practices-cookiecutter
 
 # Enter project directory
 cd <repo_name>
