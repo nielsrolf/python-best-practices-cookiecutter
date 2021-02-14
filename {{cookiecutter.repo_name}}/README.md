@@ -1,5 +1,10 @@
 # {{cookiecutter.project_name}}
 
+## Update packages:
+```
+pipenv install ...
+pipenv-setup sync
+```
 ## Setup
 ```sh
 # Install dependencies
