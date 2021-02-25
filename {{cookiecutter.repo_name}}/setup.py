@@ -1,6 +1,6 @@
 import os
 import sys
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -9,7 +9,7 @@ setup(
     description="Description here",
     license="Apache 2.0",
     packages=find_packages(),
-    package_data={"": ["*.gin"],},
+    package_data={},
     scripts=[],
     install_requires=[],
     extras_require={"test": ["pytest", "pylint!=2.5.0"],},
