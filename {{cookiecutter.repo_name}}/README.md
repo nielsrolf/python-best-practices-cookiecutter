@@ -1,18 +1,9 @@
 # {{cookiecutter.project_name}}
 
-## Update packages:
-```
-pipenv install ...
-pipenv-setup sync
-```
 ## Setup
 ```sh
 # Install dependencies
-pipenv install --dev
-
-# Setup pre-commit and pre-push hooks
-pipenv run pre-commit install -t pre-commit
-pipenv run pre-commit install -t pre-push
+pip install -e .
 ```
 
 ## Credits
