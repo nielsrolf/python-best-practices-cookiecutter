@@ -26,14 +26,3 @@ jobs:
       - run: flake8
       - run: pytest --cov --cov-fail-under=80
 
-  docker-image:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Build docker image
-        run: docker build . -t best_practices:test
-
-      - name: Smoke test docker image
-        run: |
-          docker run --rm best_practices:test 10
