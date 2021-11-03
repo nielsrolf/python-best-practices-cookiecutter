@@ -1,7 +1,4 @@
-import os
-import sys
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 setup(
     name="{{cookiecutter.repo_name}}",
@@ -11,9 +8,13 @@ setup(
     packages=find_packages(),
     package_data={},
     scripts=[],
-    install_requires=[],
-    extras_require={"test": ["pytest", "pylint!=2.5.0"],},
-    entry_points={"console_scripts": [],},
+    install_requires=["click"],
+    extras_require={
+        "test": ["pytest", "pylint!=2.5.0", "black", "mypy", "flake8", "pytest-cov"],
+    },
+    entry_points={
+        "console_scripts": [],
+    },
     classifiers=[],
     tests_require=["pytest"],
     setup_requires=["pytest-runner"],

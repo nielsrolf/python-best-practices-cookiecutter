@@ -3,7 +3,7 @@ name: Test
 on: 
   pull_request: {}
   push:
-    branches: master
+    branches: "*"
     tags: "*"
 
 jobs:
@@ -15,18 +15,16 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version: {python_version}
+          python-version: 3.9
 
       - name: Install dependencies with pipenv
         run: |
-          pip install pipenv
-          pipenv install --deploy --dev
+          pip install .[test]""
 
-      - run: pipenv run isort --recursive --diff .
-      - run: pipenv run black --check .
-      - run: pipenv run flake8
-      - run: pipenv run mypy
-      - run: pipenv run pytest --cov --cov-fail-under=100
+      - run: isort --diff .
+      - run: black --check .
+      - run: flake8
+      - run: pytest --cov --cov-fail-under=80
 
   docker-image:
     runs-on: ubuntu-latest
@@ -34,8 +32,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build docker image
-        run: docker build . -t {{cookiecutter.repo_name}}:test
+        run: docker build . -t best_practices:test
 
       - name: Smoke test docker image
         run: |
-          docker run --rm {{cookiecutter.repo_name}}:test 10
+          docker run --rm best_practices:test 10

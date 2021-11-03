@@ -1,7 +1,10 @@
 # {{cookiecutter.project_name}}
 
-## Setup
 ```sh
 # Install dependencies
-pip install -e .
+pip install -e ".[test]"
+
+# Install pre-commit hooks
+brew install pre-commit
+pre-commit install -t pre-commit
 ```
