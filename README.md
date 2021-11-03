@@ -15,11 +15,8 @@ Best practices [cookiecutter](https://github.com/audreyr/cookiecutter) template 
 ## Quickstart
 ```sh
 # Install pipx if pipenv and cookiecutter are not installed
-python3 -m pip install pipx
-python3 -m pipx ensurepath
-
-# Install pipenv using pipx
-pipx install pipenv
+pip install pipx
+pipx ensurepath
 
 # Use cookiecutter to create project from this template
 pipx run cookiecutter gh:nielsrolf/python-best-practices-cookiecutter
@@ -31,9 +28,9 @@ cd <repo_name>
 git init
 
 # Install dependencies
-pipenv install --dev
+pip install -e ".[test]"
 
 # Setup pre-commit and pre-push hooks
-pipenv run pre-commit install -t pre-commit
-pipenv run pre-commit install -t pre-push
+pre-commit install -t pre-commit
+pre-commit install -t pre-push
 ```
